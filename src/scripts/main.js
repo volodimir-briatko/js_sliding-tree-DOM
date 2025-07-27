@@ -37,15 +37,14 @@ document.querySelectorAll('.tree > li').forEach(function (element) {
   });
 });
 
-document.querySelectorAll('.click-trigger').forEach(function (element) {
-  element.addEventListener('click', function () {
-    if (element.parentNode.querySelector('ul')) {
-      if (element.parentNode.querySelector('ul').style.display === 'none') {
-        element.parentNode.querySelector('ul').style.display = 'block';
-      } else {
-        element.parentNode.querySelector('ul').style.display = 'none';
-      }
-    }
-  });
-});
+document.querySelector('.tree').addEventListener('click', function (e) {
+  const trigger = e.target.closest('.click-trigger');
 
+  if (trigger) {
+    const ul = trigger.parentNode.querySelector('ul');
+
+    if (ul) {
+      ul.style.display = ul.style.display === 'none' ? 'block' : 'none';
+    }
+  }
+});
