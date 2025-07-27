@@ -48,3 +48,4 @@ document.querySelectorAll('.click-trigger').forEach(function (element) {
     }
   });
 });
+
